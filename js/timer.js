@@ -22,31 +22,14 @@ function timer() {
             clearInterval(intervalTimerId);
             
         } else {
-            hoursValue.textContent = zeroPad(durationHours);
-            minutesValue.textContent = zeroPad(durationMinutes);
-            secondsValue.textContent = zeroPad(durationSeconds);
+            hoursValue.textContent = String(durationHours).padStart(2, 0);
+            minutesValue.textContent = String(durationMinutes).padStart(2, 0);
+            secondsValue.textContent = String(durationSeconds).padStart(2, 0);
             daysValue.textContent = durationDays;
             daysPlace.textContent = (durationDays % 10 < 5 && durationDays % 10 > 1)?
             'дня':(durationDays % 10 == 1 && durationDays != 11)?'день':'дней';
         }
     }, 1000);
-
-    function charsPad(str, count, char) {
-        str += '';
-        while (str.length < count) {
-            str = char + str;
-        }
-        return str
-    }
-
-    function decoratorCharsPad(func, count, char)   {
-        return function (str)   {
-            return func(str, count, char)
-        }
-    }
-
-    let zeroPad = decoratorCharsPad(charsPad, 2, 0);
-
 }
 
 window.addEventListener('DOMContentLoaded', () =>   {

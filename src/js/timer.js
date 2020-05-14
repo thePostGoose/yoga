@@ -1,5 +1,5 @@
 export default function timerCommonPage() {
-    let endOfEvent = new Date('2020-05-14').setHours(0),
+    let endOfEvent = new Date('2020-06-03').setHours(0),
         hoursValue = document.querySelector('.hours'),
         minutesValue = document.querySelector('.minutes'),
         secondsValue = document.querySelector('.seconds'),

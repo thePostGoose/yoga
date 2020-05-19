@@ -23,7 +23,7 @@ export default function timerCommonPage() {
             minutesValue.textContent = String(durationMinutes).padStart(2, 0);
             secondsValue.textContent = String(durationSeconds).padStart(2, 0);
             daysValue.textContent = durationDays;
-            daysPlace.textContent = (durationDays % 10 < 5 && durationDays % 10 > 1)?
+            daysPlace.textContent = (durationDays % 10 < 5 && durationDays % 10 > 1 && (durationDays > 21 || durationDays < 5))?
             'дня':(durationDays % 10 == 1 && durationDays != 11)?'день':'дней';
         }
     }, 1000);
